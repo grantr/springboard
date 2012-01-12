@@ -1,6 +1,6 @@
 require 'rails/generators'
 
-module ElasticsearchServer
+module Springboard
   module Generators
     class ConfigGenerator < Rails::Generators::Base
       source_root File.join(File.dirname(__FILE__), './templates')

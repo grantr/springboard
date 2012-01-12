@@ -2,7 +2,7 @@ Description:
   Install elasticsearch server config files.
 
 Example:
-  `rails g elasticsearch_server:config`
+  `rails g springboard:config`
 
   config/elasticsearch/elasticsearch.yml   # elasticsearch config
   config/elasticsearch/elasticsearch.in.sh # start up options
