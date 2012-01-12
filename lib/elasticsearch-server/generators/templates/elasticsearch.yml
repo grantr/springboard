@@ -1,0 +1,7 @@
+cluster.name: <%= application_name %>
+
+path.data: db/elasticsearch
+path.logs: log
+
+discovery.zen.ping.multicast.enabled: false
+discovery.zen.ping.unicast.hosts: []

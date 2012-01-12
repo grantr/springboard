@@ -1,0 +1,9 @@
+Description:
+  Install elasticsearch server config files.
+
+Example:
+  `rails g elasticsearch_server:config`
+
+  config/elasticsearch/elasticsearch.yml   # elasticsearch config
+  config/elasticsearch/elasticsearch.in.sh # start up options
+  config/elasticsearch/logging.yml         # logging configuration

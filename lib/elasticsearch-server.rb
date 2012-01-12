@@ -1,7 +1,3 @@
 require "elasticsearch-server/version"
 
-module Elasticsearch
-  module Server
-    # Your code goes here...
-  end
-end
+require 'elasticsearch-server/railtie' if defined?(Rails)
