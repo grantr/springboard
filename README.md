@@ -21,6 +21,13 @@ Or install it yourself as:
 
     $ gem install springboard
 
+## Versioning
+
+Springboard uses elasticsearch version numbers so you can require
+specific elasticsearch versions in your Gemfile. Create an issue or pull
+request if you need a version of the gem with a particular elasticsearch
+version.
+
 ## Usage
 
 This gem packages up the elasticsearch binary distribution with a ruby
