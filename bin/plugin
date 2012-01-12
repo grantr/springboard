@@ -1,5 +1,0 @@
-#!/bin/sh
-
-DIR=`dirname $BASH_SOURCE`
-
-exec $DIR/../vendor/elasticsearch/bin/plugin $*

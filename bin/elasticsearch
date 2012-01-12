@@ -1,5 +1,3 @@
-#!/bin/sh
+#!/usr/bin/env ruby
 
-DIR=`dirname $BASH_SOURCE`
-
-exec $DIR/../vendor/elasticsearch/bin/elasticsearch $*
+exec File.expand_path("../vendor/elasticsearch/bin/elasticsearch",  File.dirname(__FILE__)), ARGV.join(" ")
