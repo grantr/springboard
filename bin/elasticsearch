@@ -11,7 +11,7 @@ if args =~ /(-c [\w\/]+)/
   ENV['ES_JAVA_OPTS'] = "-Des.path.conf=#{conf}"
 
   if es_include = conf.entries.detect { |p| p.to_s == "elasticsearch.in.sh" }
-    ENV['ES_INCLUDE'] = es_include.expand_path conf
+    ENV['ES_INCLUDE'] = es_include.expand_path(conf).to_s
   end
 end
 
