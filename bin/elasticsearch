@@ -10,8 +10,8 @@ if args =~ /(-c [\w\/]+)/
   conf = Pathname.new(File.expand_path(conf, Dir.pwd)) if conf.relative?
   ENV['ES_JAVA_OPTS'] = "-Des.path.conf=#{conf}"
 
-  if es_include = conf.entries.detect { |p| p.to_s == "elasticsearch.in.sh" }
-    ENV['ES_INCLUDE'] = es_include.expand_path(conf).to_s
+  if es_include = conf.children(false).detect { |p| p.to_s == "elasticsearch.in.sh" }
+    ENV['ES_INCLUDE'] = (conf + es_include).to_s
   end
 end
 
