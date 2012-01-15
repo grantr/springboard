@@ -21,4 +21,4 @@ if dir = args.slice!(config_directory_arg)
   end
 end
 
-exec File.expand_path("../vendor/elasticsearch/bin/elasticsearch",  File.dirname(__FILE__)), args.strip
+exec (Pathname.new(File.dirname(__FILE__)) + "../vendor/elasticsearch/bin/elasticsearch").realpath.to_s, args.strip
