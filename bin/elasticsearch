@@ -5,14 +5,20 @@ require 'pathname'
 # Not using optparse or trollop because they raise on unknown args, and 
 # we want to pass all unknown args to elasticsearch.
 args = ARGV.join(" ")
-if args =~ /(-c [\w\/]+)/
-  conf = Pathname.new(args.slice!($1).sub("-c ",''))
-  conf = Pathname.new(File.expand_path(conf, Dir.pwd)) if conf.relative?
-  ENV['ES_JAVA_OPTS'] = "-Des.path.conf=#{conf}"
 
-  if es_include = conf.entries.detect { |p| p.to_s == "elasticsearch.in.sh" }
-    ENV['ES_INCLUDE'] = es_include.expand_path conf
+config_directory_arg = /-c\s+(\S+)\s?/
+
+if dir = args.slice!(config_directory_arg)
+
+  conf = config_directory_arg.match(dir){ |m| Pathname.new(m[1]) }
+
+  raise "Must provide the configuration directory." unless conf.directory?
+
+  ENV['ES_JAVA_OPTS'] = "-Des.path.conf=#{conf.to_s}"
+
+  if es_include = conf.children(false).detect { |p| p.to_s == "elasticsearch.in.sh" }
+    ENV['ES_INCLUDE'] = (conf + es_include).to_s
   end
 end
 
-exec File.expand_path("../vendor/elasticsearch/bin/elasticsearch",  File.dirname(__FILE__)), args.strip
+exec (Pathname.new(File.dirname(__FILE__)) + "../vendor/elasticsearch/bin/elasticsearch").realpath.to_s, args.strip
