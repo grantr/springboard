@@ -18,6 +18,7 @@ EOS
   end
 end
 
+desc "Clean data from vendor/elasticsearch"
 task :clean do
   sh "rm -rf vendor/elasticsearch/logs vendor/elasticsearch/data"
 end
