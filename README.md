@@ -35,7 +35,7 @@ gem binary on top. It add a config path parameter to the elasticsearch
 binary. This makes it easier to put a relative config path on the 
 command line:
 
-    elasticsearch -c config/elasticsearch -f
+    springboard -c config/elasticsearch -f
 
 All other parameters are passed through to the normal elasticsearch
 start script.
@@ -46,7 +46,7 @@ path, almost certainly not what you want.
 
 You can run elasticsearch from a Procfile:
 
-    es: bundle exec elasticsearch -c config/elasticsearch -f
+    es: bundle exec springboard -c config/elasticsearch -f
 
 A rails generator for elasticsearch config files is included. Run:
     
