@@ -28,6 +28,9 @@ specific elasticsearch versions in your Gemfile. Create an issue or pull
 request if you need a version of the gem with a particular elasticsearch
 version.
 
+Subsequent Springboard releases for the same version will add a
+version specifier to the end of the version, eg 0.18.7.1.
+
 ## Usage
 
 This gem packages up the elasticsearch binary distribution with a ruby
