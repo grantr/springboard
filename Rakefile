@@ -12,7 +12,7 @@ task :update, [:version] do |t, args|
   File.open("lib/springboard/version.rb", "w") do |f|
     f.write <<EOS
 module Springboard
-VERSION = "#{args.version}"
+  VERSION = "#{args.version}"
 end
 EOS
   end
