@@ -10,7 +10,7 @@ config_directory_arg = /-c\s+(\S+)\s?/
 
 if dir = args.slice!(config_directory_arg)
 
-  conf = config_directory_arg.match(dir){ |m| Pathname.new(m[1]) }
+  conf = Pathname.new(config_directory_arg.match(dir)[1])
 
   raise "Must provide the configuration directory." unless conf.directory?
 
