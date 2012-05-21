@@ -20,5 +20,5 @@ end
 
 desc "Clean data from vendor/elasticsearch"
 task :clean do
-  sh "rm -rf vendor/elasticsearch/logs vendor/elasticsearch/data"
+  sh "rm -rf log vendor/elasticsearch/logs vendor/elasticsearch/data"
 end
