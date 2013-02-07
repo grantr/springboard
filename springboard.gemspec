@@ -15,4 +15,6 @@ Gem::Specification.new do |gem|
   gem.name          = "springboard"
   gem.require_paths = ["lib"]
   gem.version       = Springboard::VERSION
+
+  gem.add_development_dependency 'rake'
 end
