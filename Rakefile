@@ -4,7 +4,7 @@ require "bundler/gem_tasks"
 desc "update elasticsearch version" 
 task :update, [:version] do |t, args|
   sh "rm -rf vendor/elasticsearch && mkdir vendor/elasticsearch"
-  sh "wget https://github.com/downloads/elasticsearch/elasticsearch/elasticsearch-#{args.version}.tar.gz"
+  sh "wget http://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-#{args.version}.tar.gz"
   sh "tar zxvf elasticsearch-#{args.version}.tar.gz"
   sh "mv elasticsearch-#{args.version}/* vendor/elasticsearch"
   sh "rm -rf elasticsearch-#{args.version} elasticsearch-#{args.version}.tar.gz"
