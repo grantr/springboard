@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ES_CLASSPATH=$ES_CLASSPATH:$ES_HOME/lib/elasticsearch-0.90.2.jar:$ES_HOME/lib/*:$ES_HOME/lib/sigar/*
+ES_CLASSPATH=$ES_CLASSPATH:$ES_HOME/lib/elasticsearch-0.90.12.jar:$ES_HOME/lib/*:$ES_HOME/lib/sigar/*
 
 if [ "x$ES_MIN_MEM" = "x" ]; then
     ES_MIN_MEM=256m
@@ -46,9 +46,6 @@ JAVA_OPTS="$JAVA_OPTS -XX:+UseConcMarkSweepGC"
 
 JAVA_OPTS="$JAVA_OPTS -XX:CMSInitiatingOccupancyFraction=75"
 JAVA_OPTS="$JAVA_OPTS -XX:+UseCMSInitiatingOccupancyOnly"
-
-# When running under Java 7
-# JAVA_OPTS="$JAVA_OPTS -XX:+UseCondCardMark"
 
 # GC logging options
 if [ "x$ES_USE_GC_LOGGING" != "x" ]; then
